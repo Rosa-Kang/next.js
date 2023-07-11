@@ -21,7 +21,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={nunito.className}>
         <ClientOnly>
-          <Modal title="hello world" isOpen={true}  actionLabel='Submit' secondaryActionLabel=''/>
+          <Modal title="hello world" isOpen={true}  actionLabel='Submit' secondaryActionLabel='Remove'/>
           <Navbar />
         </ClientOnly>
             {children}
