@@ -38,13 +38,30 @@ const RegisterModal = () => {
                 title="welcome to next-bnb!"
                 subtitle="Create an account!"
             />
-            <Input
-     
+            <Input 
+                id="email"
                 label="Email"
                 disabled={isLoading}
                 register={register}
+                errors={errors}
                 required
-            />
+                />
+            <Input 
+                id="email"
+                label="Email"
+                disabled={isLoading}
+                register={register}
+                errors={errors}
+                required
+                />
+            <Input 
+                id='email'
+                label='Email'
+                disabled={isLoading}
+                register={register}
+                errors={errors}
+                required
+                />
         </div>
     )
 
