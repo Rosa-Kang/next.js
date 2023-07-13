@@ -25,7 +25,7 @@ export default async function RootLayout({
   
   return (
     <html lang="en">
-      <body className={nunito.className}>
+      <body suppressHydrationWarning={true} className={nunito.className}>
         <ClientOnly>
           <ToasterProvider />
           <RegisterModal />
