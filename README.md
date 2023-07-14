@@ -10,8 +10,10 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 ## Key Concept of Next.JS I learned throughout this project:
 With Server-first Approach, Next.js makes the initial page load is faster, and reduces the client-side JavaScript bundle size. The base client-side runtime is cacheable and predictable in size, and does not increase as your application grows. Additional JavaScript is only added as client-side interactivity is used in your application through Client Components.
 
+------------
 * In Next.js, Client Components are pre-rendered on the server and hydrated on the client. The "use client" directive is a convention to declare a boundary between a Server and Client Component module graph.
 
+---------
 * What is Zustand?
 I have used the Zustand for state management in this app inside the hook. Zustand is a small unopinionated state management library built by Jotai and React-spring. It has a comfy API based on hooks, and isn't opinionated. Zustand is open-source with a large community of users and support developers working round the clock to make Zustand stable.
 
@@ -31,3 +33,6 @@ and then a callback function should follow
     };
   });
 ```
+--------
+* Login Process
+: Login process in this app is handled by by ***NextAuth.js***, which provides a simple and customizable authentication solution for Next.js applications. ***Prisma*** is used to interact with the MongoDB database, and ***React Hot Toast*** is used for displaying error messages.
