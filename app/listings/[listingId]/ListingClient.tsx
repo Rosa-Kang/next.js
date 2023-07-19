@@ -83,19 +83,19 @@ const ListingClient: React.FC<ListingClientProps> = ({
     }, [totalPrice, dateRange, listing?.id, router, currentUser, loginModal]);
 
     useEffect(() => {
-        if (dateRange.startDate && dateRange.endDate) {
-            const dayCount = differenceInCalendarDays(
-                dateRange.endDate,
-                dateRange.startDate
-            );
-
-            if (dayCount && listing.price) {
-                setTotalPrice(dayCount * listing.price);
-            } else {
-                setTotalPrice(listing.price);
-            }
-        }
-    }, [dateRange, listing.price])
+    if (dateRange.startDate && dateRange.endDate) {
+      const dayCount = differenceInCalendarDays(
+        dateRange.endDate, 
+        dateRange.startDate
+      );
+      
+      if (dayCount && listing.price) {
+        setTotalPrice(dayCount * listing.price);
+      } else {
+        setTotalPrice(listing.price);
+      }
+    }
+  }, [dateRange, listing.price]);
 
     const category = useMemo(() => {
         return categories.find((item) => 
