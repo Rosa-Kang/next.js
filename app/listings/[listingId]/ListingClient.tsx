@@ -1,4 +1,9 @@
 'use client';
+import { useRouter } from "next/navigation";
+import { differenceInCalendarDays, eachDayOfInterval } from "date-fns";
+import axios from "axios";
+import { toast } from "react-hot-toast";
+import { Range } from "react-date-range";
 
 import { Reservation } from ".prisma/client";
 import { categories } from "@/app/components/navbar/Categories";
@@ -9,10 +14,6 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import ListingHead from "@/app/components/listings/ListingHead";
 import ListingInfo from "@/app/components/listings/ListingInfo";
 import useLoginModal from "@/app/hooks/useLoginModal";
-import { useRouter } from "next/navigation";
-import { differenceInCalendarDays, eachDayOfInterval } from "date-fns";
-import axios from "axios";
-import { toast } from "react-hot-toast";
 import ListingReservation from "@/app/components/listings/ListingReservation";
 
 const initialDateRange = {
@@ -52,7 +53,7 @@ const ListingClient: React.FC<ListingClientProps> = ({
 
     const [isLoading, setIsLoading] = useState(false);
     const [totalPrice, setTotalPrice] = useState(listing.price);
-    const [dateRange, setDateRange] = useState(initialDateRange);
+    const [dateRange, setDateRange] = useState<Range>(initialDateRange);
 
     const onCreateReservation = useCallback(() => {
         if (!currentUser) {
@@ -114,7 +115,7 @@ const ListingClient: React.FC<ListingClientProps> = ({
                         currentUser={currentUser}
                     />
 
-                    <div className="grid grid-cols-1 mt-6">
+                    <div className="grid grid-cols-1 mt-6 md:grid-cols-7 md:gap-10">
                         <ListingInfo
                             user={listing.user}
                             category={category}
