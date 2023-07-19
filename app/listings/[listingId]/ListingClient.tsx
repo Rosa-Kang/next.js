@@ -5,10 +5,8 @@ import axios from "axios";
 import { toast } from "react-hot-toast";
 import { Range } from "react-date-range";
 
-import { Reservation } from ".prisma/client";
 import { categories } from "@/app/components/navbar/Categories";
-
-import { SafeUser, safeListing } from "@/app/types";
+import { SafeUser, SafeReservation, SafeListing } from "@/app/types";
 import Container from "@/app/components/Container";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import ListingHead from "@/app/components/listings/ListingHead";
@@ -23,9 +21,9 @@ const initialDateRange = {
 };
 
 interface ListingClientProps {
-    reservations?: Reservation[];
-    listing: safeListing & {
-        user: SafeUser
+    reservations?: SafeReservation[];
+    listing: SafeListing & {
+    user: SafeUser
     };
     currentUser?: SafeUser | null;
 }
