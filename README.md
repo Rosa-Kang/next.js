@@ -34,3 +34,5 @@ and then a callback function should follow
   });
 ```
 --------
+* Login Process
+: Login process in this app is handled by by ***NextAuth.js***, which provides a simple and customizable authentication solution for Next.js applications. ***Prisma*** is used to interact with the MongoDB database, and ***React Hot Toast*** is used for displaying error messages.
