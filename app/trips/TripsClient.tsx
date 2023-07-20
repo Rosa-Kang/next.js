@@ -12,13 +12,13 @@ import ListingCard from '../components/listings/ListingCard';
 
 
 interface TripsClientProps {
-    reservation: SafeReservation[];
+    reservations: SafeReservation[];
     currentUser?: SafeUser | null;
 }
 
 
 const TripsClient: React.FC<TripsClientProps> = ({
-    reservation, currentUser
+    reservations, currentUser
 }) => {
 
     const router = useRouter();
